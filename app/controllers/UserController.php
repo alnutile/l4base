@@ -71,7 +71,8 @@ class UserController extends BaseController {
         }
         else
         {
-            return View::make(Config::get('confide::login_form'));
+            //return View::make(Config::get('confide::login_form'));
+            return View::make('sessions.login');
         }
     }
 
