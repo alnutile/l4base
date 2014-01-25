@@ -17,7 +17,8 @@ class UserController extends BaseController {
      */
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+        //return View::make(Config::get('confide::signup_form'));
+        return View::make('sessions.signup');
     }
 
     /**
@@ -67,7 +68,7 @@ class UserController extends BaseController {
         {
             // If user is logged, redirect to internal 
             // page, change it to '/admin', '/dashboard' or something
-            return Redirect::to('/');
+            return Redirect::to('/dashboard');
         }
         else
         {
@@ -152,7 +153,8 @@ class UserController extends BaseController {
      */
     public function forgot_password()
     {
-        return View::make(Config::get('confide::forgot_password_form'));
+        //return View::make(Config::get('confide::forgot_password_form'));
+        return View::make('sessions.forgot_password');
     }
 
     /**
@@ -182,7 +184,9 @@ class UserController extends BaseController {
      */
     public function reset_password( $token )
     {
-        return View::make(Config::get('confide::reset_password_form'))
+//        return View::make(Config::get('confide::reset_password_form'))
+//                ->with('token', $token);
+        return View::make('sessions.reset_password')
                 ->with('token', $token);
     }
 

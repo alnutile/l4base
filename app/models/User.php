@@ -20,12 +20,9 @@ class User extends ConfideUser {
     protected $fillable = array('firstname, lastname, email');
 
     public static $rules = array(
-        'firstname' => 'required|min:2|alpha',
-        'lastname' => 'required|min:2|alpha',
         'email' => 'required|email|unique:users',
         'password' => 'required|between:8,32|confirmed',
         'password_confirmation' =>  'required|between:8,32',
-        'admin' => 'integer'
     );
 
 	/**
